@@ -688,7 +688,7 @@ img {
 
 .contact-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 24px;
 }
 
@@ -832,7 +832,7 @@ img {
 /* --- Responsive --- */
 @media (max-width: 768px) {
   .nav-toggle {
-    display: flex;
+    display: none;
   }
 
   .nav-links {
