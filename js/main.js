@@ -4,20 +4,44 @@
   // Mobile nav toggle
   const toggle = document.getElementById('nav-toggle');
   const navLinks = document.getElementById('nav-links');
+  const mobileOverlay = document.getElementById('mobile-menu-overlay');
 
-  if (toggle && navLinks) {
+  if (toggle) {
     toggle.addEventListener('click', function () {
-      navLinks.classList.toggle('open');
       toggle.classList.toggle('active');
+
+      // Desktop nav links
+      if (navLinks) {
+        navLinks.classList.toggle('open');
+      }
+
+      // Mobile overlay
+      if (mobileOverlay) {
+        mobileOverlay.classList.toggle('open');
+        document.body.style.overflow = mobileOverlay.classList.contains('open') ? 'hidden' : '';
+      }
     });
 
-    // Close menu when a link is clicked
-    navLinks.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
-        navLinks.classList.remove('open');
-        toggle.classList.remove('active');
+    // Close menu when a link is clicked (desktop)
+    if (navLinks) {
+      navLinks.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          navLinks.classList.remove('open');
+          toggle.classList.remove('active');
+        });
       });
-    });
+    }
+
+    // Close overlay when a link is clicked (mobile)
+    if (mobileOverlay) {
+      mobileOverlay.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          mobileOverlay.classList.remove('open');
+          toggle.classList.remove('active');
+          document.body.style.overflow = '';
+        });
+      });
+    }
   }
 
   // Navbar hide on scroll down, show on scroll up
@@ -71,33 +95,6 @@
       }, 400);
     });
   });
-
-  // Mobile bottom nav - highlight active section
-  var bottomNav = document.getElementById('mobile-bottom-nav');
-  if (bottomNav) {
-    var bottomLinks = bottomNav.querySelectorAll('a');
-    var sectionObserver = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            var id = entry.target.id;
-            bottomLinks.forEach(function (link) {
-              if (link.getAttribute('href') === '#' + id) {
-                link.classList.add('active');
-              } else {
-                link.classList.remove('active');
-              }
-            });
-          }
-        });
-      },
-      { threshold: 0.3 }
-    );
-
-    document.querySelectorAll('.section').forEach(function (s) {
-      sectionObserver.observe(s);
-    });
-  }
 
   // Simple fade-in on scroll for sections
   var sections = document.querySelectorAll('.section');
