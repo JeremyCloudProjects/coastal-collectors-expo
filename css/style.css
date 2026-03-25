@@ -850,7 +850,7 @@ img {
 /* --- Responsive --- */
 @media (max-width: 768px) {
   .nav-inner {
-    height: 56px;
+    height: 72px;
     padding: 0 20px;
   }
 
@@ -861,7 +861,7 @@ img {
   }
 
   .nav-logo img {
-    height: 36px;
+    height: 61px;
   }
 
   .nav-links {
