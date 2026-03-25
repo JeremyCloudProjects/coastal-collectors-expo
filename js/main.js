@@ -72,6 +72,33 @@
     });
   });
 
+  // Mobile bottom nav - highlight active section
+  var bottomNav = document.getElementById('mobile-bottom-nav');
+  if (bottomNav) {
+    var bottomLinks = bottomNav.querySelectorAll('a');
+    var sectionObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var id = entry.target.id;
+            bottomLinks.forEach(function (link) {
+              if (link.getAttribute('href') === '#' + id) {
+                link.classList.add('active');
+              } else {
+                link.classList.remove('active');
+              }
+            });
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    document.querySelectorAll('.section').forEach(function (s) {
+      sectionObserver.observe(s);
+    });
+  }
+
   // Simple fade-in on scroll for sections
   var sections = document.querySelectorAll('.section');
 

@@ -829,57 +829,90 @@ img {
   font-size: 0.85rem;
 }
 
+/* --- Mobile Bottom Nav --- */
+.mobile-bottom-nav {
+  display: none;
+}
+
 /* --- Responsive --- */
 @media (max-width: 768px) {
+  /* Top nav: just the logo, centered and compact */
   .nav-inner {
-    height: auto;
-    flex-wrap: wrap;
-    padding: 8px 16px;
-    gap: 0;
+    height: 60px;
+    justify-content: center;
+    padding: 0 16px;
   }
 
   .nav-logo img {
-    height: 48px;
-  }
-
-  .nav-creators {
-    gap: 6px;
-  }
-
-  .nav-creator-logo img {
     height: 44px;
   }
 
-  .nav-creator-logo.magikart img {
-    height: 50px;
+  .nav-links {
+    display: none;
+  }
+
+  .nav-creators {
+    display: none;
   }
 
   .nav-toggle {
     display: none;
   }
 
-  .nav-links {
+  /* Bottom sticky nav */
+  .mobile-bottom-nav {
     display: flex;
-    width: 100%;
-    justify-content: center;
-    gap: 0;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 4px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: rgba(12, 30, 51, 0.97);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    justify-content: space-around;
+    padding: 8px 0;
+    padding-bottom: max(8px, env(safe-area-inset-bottom));
   }
 
-  .nav-links a {
-    padding: 6px 10px;
-    font-size: 0.75rem;
-    white-space: nowrap;
+  .mobile-bottom-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    color: rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+    font-size: 0.6rem;
+    font-weight: 600;
+    font-family: 'Outfit', sans-serif;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 4px 8px;
+    transition: color 0.2s ease;
+  }
+
+  .mobile-bottom-nav a:hover,
+  .mobile-bottom-nav a.active {
+    color: var(--orange);
+  }
+
+  .mobile-bottom-nav svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 1.8;
   }
 
   html {
-    scroll-padding-top: 100px;
+    scroll-padding-top: 70px;
+  }
+
+  body {
+    padding-bottom: 70px;
   }
 
   .hero-content {
-    padding: 120px 20px 60px;
+    padding: 80px 20px 60px;
   }
 
   .hero-logo {
