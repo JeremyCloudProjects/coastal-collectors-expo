@@ -78,10 +78,10 @@ img {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: rgba(12, 30, 51, 0.95);
+  background: linear-gradient(135deg, rgba(26, 61, 110, 0.95) 0%, rgba(27, 94, 160, 0.9) 50%, rgba(90, 187, 232, 0.85) 100%);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   transition: transform 0.35s ease, background var(--transition);
 }
 
