@@ -78,7 +78,7 @@ img {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: linear-gradient(to right, #1a3d6e 0%, #1b5ea0 40%, #e8862b 75%, #e8862b 100%);
+  background: linear-gradient(to right, #1a3d6e 0%, #1b5ea0 40%, #f0a050 75%, #f5c078 100%);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
