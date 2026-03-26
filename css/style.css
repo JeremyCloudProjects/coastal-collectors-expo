@@ -670,7 +670,15 @@ img {
 
 /* --- Gallery --- */
 .gallery {
-  background: var(--gray-100);
+  background: linear-gradient(135deg, #1a3d6e 0%, #1b5ea0 40%, #f0a050 80%, #f5c078 100%);
+}
+
+.gallery .section-header h2 {
+  color: var(--white);
+}
+
+.gallery .section-subtitle {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .gallery-grid {
