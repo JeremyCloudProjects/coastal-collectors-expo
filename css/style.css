@@ -239,7 +239,7 @@ img {
 .hero-content {
   position: relative;
   z-index: 1;
-  padding: 120px 24px 80px;
+  padding: 160px 24px 80px;
   max-width: 720px;
 }
 
@@ -249,6 +249,7 @@ img {
   letter-spacing: 3px;
   text-transform: uppercase;
   color: var(--orange);
+  margin-top: 24px;
   margin-bottom: 20px;
 }
 
@@ -936,7 +937,7 @@ img {
   }
 
   .hero-content {
-    padding: 76px 20px 60px;
+    padding: 110px 20px 60px;
   }
 
   .hero-logo {
